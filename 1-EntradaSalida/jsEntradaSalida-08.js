@@ -8,5 +8,11 @@ FACUNDO GONZALEZ
 ej.: "El resto es 0 ."*/
 function SacarResto()
 {
-	alert("ok");
+	var dividendo,divisor,resto;
+
+	dividendo=document.getElementById("txtIdNumeroDividendo").value;
+	divisor=document.getElementById("txtIdNumeroDivisor").value;
+	resto = parseInt(dividendo) % parseInt(divisor);
+
+	alert("El resto es: " + resto);
 }
