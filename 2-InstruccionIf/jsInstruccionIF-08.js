@@ -1,3 +1,5 @@
+// FACUNDO GONZALEZ
+
 function mostrar()
 {
 	var edadIngresada, estadoCivil;
@@ -5,7 +7,9 @@ function mostrar()
 	edadIngresada=document.getElementById("txtIdEdad").value;
 	estadoCivil=document.getElementById("estadoCivil").value;
 
-	if (edadIngresada >= 18 && estadoCivil == "Soltero"){
+	edadIngresada = parseInt(parseInt);
+
+	if (edadIngresada > 17 && estadoCivil == "Soltero"){
 		alert("Es soltero y no es menor");
 	}
 
