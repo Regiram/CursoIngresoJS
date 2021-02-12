@@ -12,11 +12,10 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	var cantidadLamparas, marcaLampara, costoLampara, precio, precioFinal, descuento, operacionOFF;
+ 	var cantidadLamparas, marcaLampara, costoLampara, precio, precioFinal, descuento, operacionOFF, IIBB, IIBBmonto;
 
     cantidadLamparas = document.getElementById("txtIdCantidad").value;
     marcaLampara = document.getElementById("Marca").value;
-
     cantidadLamparas = parseInt(cantidadLamparas);
     costoLampara = parseInt(35);
     
@@ -26,13 +25,51 @@ function CalcularPrecio ()
         descuento = 0.5;
     }
     else{
-        if (marcaLampara == "ArgentinaLuz" && cantidadLamparas == 5) {
-            descuento = 0.6;
+        if (cantidadLamparas == 5) {
+            if (marcaLampara == "ArgentinaLuz"){
+               descuento = 0.6;
+            }
+            else {
+                descuento = 0.7;
+            }
         }
         else {
-            descuento = 0.7;
+            if (cantidadLamparas == 4){
+                if (marcaLampara == "ArgentinaLuz" || marcaLampara == "FelipeLamparas" ){
+                    descuento = 0.75;
+                }
+                else{
+                    descuento = 0.8;
+                }
+            }
+            else {
+                if (cantidadLamparas == 3){
+                    if (marcaLampara == "ArgentinaLuz"){
+                        descuento = 0.85;
+                    }
+                    else{
+                        if (marcaLampara="FelipeLamparas"){
+                            descuento = 0.9;
+                        }
+                        else{
+                            descuento = 0.95;
+                        }
+                    }
+                }
+                else{
+                    descuento = 1;
+                }
+            }
+
         }
     }
     operacionOFF = parseInt(precio * descuento);
     precioFinal = document.getElementById("txtIdprecioDescuento").value = operacionOFF;
+    IIBB = precioFinal * 1.1;
+    IIBBmonto = IIBB - precioFinal;
+    IIBBmonto = parseInt(IIBBmonto);
+    IIBB = parseInt (IIBB);
+    if (precioFinal > 120){
+        alert ("IIBB: Ustedp pago $" + IIBB + ", siendo $" + IIBBmonto +" el impuesto que pago.");
+    }
 }

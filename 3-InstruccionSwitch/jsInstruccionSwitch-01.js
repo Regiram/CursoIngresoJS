@@ -1,20 +1,25 @@
+
+// FACUNDO GONZALEZ
+
+
 function mostrar()
 {
 	var mesAño
 	mesAño = document.getElementById("txtIdMes").value;
 
-	if (mesAño == "Enero"){
-		alert ("¡¡Que comiences bien el año!!");
+	switch (mesAño){
+		case "Enero":
+			alert ("Que tengas un buen inicio de año");
+			break;
+		case "Marzo":
+			alert ("A clases!!");
+			break;
+		case "Julio":
+			alert("Se vienen las vacaciones!");
+			break;
+		case "Diciembre":
+			alert("Felices Fiestas!!");
+			break;
 	}
-	else if (mesAño == "Marzo"){
-		alert ("!!A clases!!");
-	}
-	else if (mesAño == "Julio"){
-		alert ("Se vienen las vacaciones!");
-	}
-	else if (mesAño == "Diciembre"){
-		alert ("Felices fiestas!!");
-	}
-
 
 }//FIN DE LA FUNCIÓN
