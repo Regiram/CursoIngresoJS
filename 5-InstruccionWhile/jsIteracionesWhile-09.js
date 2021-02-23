@@ -1,21 +1,34 @@
 /*
 Al presionar el botón pedir  números  hasta que el usuario quiera,
-mostrar el número máximo y el número mínimo ingresado.*/
+mostrar el número máximo y el número mínimo ingresado.
+
+FACUNDO GONZALEZ
+
+*/
 function mostrar()
-{	// declarar variables
-	var banderaDelPrimero;
+{	
+	var banderaPrimero;
 	var numeroIngresado;
 	var numeroMaximo;
 	var numeroMinimo;
-	var respuesta;
-	//iniciar variables
-	banderaDelPrimero="es el primero";
-	respuesta='si';
-	while(respuesta=="si")
-	{
-		
-		respuesta=prompt("desea continuar?");
+	var pregunta;
+
+	banderaPrimero="primero";
+	pregunta='si';
+
+	while (pregunta == "si"){	
+		numeroIngresado = prompt ("Ingrese un numero");
+		numeroIngresado = parseInt(numeroIngresado);
+
+		if (banderaPrimero == "primero" || numeroIngresado > numeroMaximo){
+			numeroMaximo = numeroIngresado;
+		}
+		if (banderaPrimero == "primero" || numeroIngresado < numeroMinimo){
+			numeroMinimo = numeroIngresado;
+			banderaPrimero = "no";
+		}
+		pregunta=prompt("desea continuar? (si/no)");
 	}
 	txtIdMaximo.value=numeroMaximo;
-	txtIdMinimmo.value=numeroMinimo;
-}//FIN DE LA FUNCIÓN
+	txtIdMinimo.value=numeroMinimo;
+}
