@@ -1,21 +1,11 @@
 /*
-Al presionar el botón pedir  números  hasta que el usuario quiera,
-mostrar el número máximo y el número mínimo ingresado.
-
+ WHILE #09 bis
 FACUNDO GONZALEZ
 
 */
 function mostrar()
 {	
-	var banderaPrimero;
-	var banderaNumeroPar;
-	var banderaNumeroNegativo;
-	var numeroIngresado;
-	var numeroMaximo;
-	var numeroMinimo;
-	var pregunta;
-	var menorPar;
-	var mayorNegativo;
+	var banderaPrimero, banderaNumeroPar, banderaNumeroNegativo, numeroIngresado, numeroMaximo, numeroMinimo, pregunta, menorPar, mayorNegativo;
 
 	banderaPrimero="primero";
 	pregunta ='si';
@@ -33,7 +23,7 @@ function mostrar()
 			numeroMinimo = numeroIngresado;
 			banderaPrimero = "no";
 		}
-		if ((banderaNumeroPar == "par" && numeroIngresado % 2 == 0)  || numeroIngresado < menorPar){
+		if ((banderaNumeroPar == "par" && numeroIngresado % 2 == 0)  || (numeroIngresado < menorPar && numeroIngresado % 2 == 0)){
 			menorPar = numeroIngresado;
 			banderaNumeroPar = "impar";
 		}
